@@ -1,0 +1,68 @@
+Description
+You are given an integer N with no more than 105 digits. You have to find the sum of its digits.
+
+Input Format
+The first line of the input contains one integer T - the number of test cases. Then T test cases follow.
+
+The first line of each test case contains one integer N.
+
+Output Format
+For each test case, print the sum of digits on N on a new line.
+
+Constraints
+1≤ T ≤ 106
+
+1≤ Number of digits in N ≤ 106
+
+It is guaranteed that the sum of the number of digits in N over all the test cases does not exceed 106.
+
+Solution:
+Bcoz of the constraint, we can use strings menthod rather than the conventional one.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+
+    int t;
+    cin>>t;
+    for(int i=0;i<t;i++)
+    {   
+
+        string num;
+        cin>>num;
+        long long sum=0;
+
+        for(int i=0;i<num.length();i++)
+        {
+            int digit=num[i]-'0';
+            sum+=digit;
+        }
+
+
+        /*long long num;
+        cin>>num;
+        
+        long long sum=0;
+        long long rem=0;
+
+        while(num>0)
+        {
+            rem=num%10;
+            sum+=rem;
+            num=num/10;
+        }*/
+
+        cout<<sum<<endl;
+    }
+    return 0;
+    
+}
+
+
+T.C:O(T*N)
+S.C:O(1)
