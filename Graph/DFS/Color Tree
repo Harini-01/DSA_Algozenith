@@ -23,6 +23,8 @@ Sample Output 1
 
 Idea: Parent and all its children should have pairwise distinct colors. => max(degree) + 1
 
+
+Code: 2 Approaches
 #include<bits/stdc++.h>
 #define int long long
 
@@ -57,6 +59,39 @@ void solve()
     cout<<max_degree + 1<<"\n";
 }
 
+
+void solve2()
+{
+    int N;
+    cin>>N;
+
+    vector<int> degree(N,0);
+
+    int a;
+    int b;
+
+    for(int i=0;i<N-1;i++)
+    {
+        cin>>a;
+        cin>>b;
+
+        a--;
+        b--;
+
+        degree[a]++;
+        degree[b]++;
+
+    }
+
+    int max_degree = 0;
+
+    for(int deg:degree)
+    {
+        max_degree = max(deg, max_degree);
+    }
+
+    cout<<max_degree+1<<"\n";
+}
 signed main()
 {
     ios_base::sync_with_stdio(0);
@@ -68,6 +103,7 @@ signed main()
     while(t--)
     {
         solve();
+        //solve2();
     }
 
     
